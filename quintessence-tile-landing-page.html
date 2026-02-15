@@ -1,0 +1,1394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quintessence Tile PDX | Custom Tile &amp; Bath Design for Portland's Finest Homes</title>
+  <meta name="description" content="Portland's premier tile artisans. Custom tile work and luxury bathroom remodeling with precision craftsmanship, premium materials, and meticulous attention to detail.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================
+       CSS VARIABLES
+       ============================================ */
+    :root {
+      --color-bg-primary: #FAFAF8;
+      --color-bg-secondary: #F0EEEB;
+      --color-bg-dark: #0F1923;
+      --color-bg-navy: #152338;
+      --color-text-primary: #2D2D2D;
+      --color-text-secondary: #7A7A7A;
+      --color-text-heading: #1A1A1A;
+      --color-text-light: #C8CDD3;
+      --color-accent: #1B3A5C;
+      --color-accent-hover: #14304D;
+      --color-accent-light: #E8EDF2;
+      --color-border: #E2E0DC;
+      --color-white: #FFFFFF;
+      --color-overlay: rgba(15, 25, 35, 0.7);
+
+      --font-heading: 'Playfair Display', Georgia, serif;
+      --font-body: 'Raleway', 'Helvetica Neue', sans-serif;
+
+      --container-max: 1200px;
+      --section-padding: 100px;
+      --section-padding-mobile: 60px;
+    }
+
+    /* ============================================
+       RESET & BASE
+       ============================================ */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      font-family: var(--font-body);
+      font-size: 18px;
+      line-height: 1.15;
+      color: var(--color-text-primary);
+      background-color: var(--color-bg-primary);
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ============================================
+       TYPOGRAPHY
+       ============================================ */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-heading);
+      color: var(--color-text-heading);
+      line-height: 1.3;
+      font-weight: 500;
+    }
+
+    h1 { font-size: 52px; line-height: 1.2; }
+    h2 { font-size: 38px; }
+    h3 { font-size: 28px; }
+    h4 { font-size: 24px; }
+    h5 { font-size: 18px; font-family: var(--font-body); font-weight: 600; letter-spacing: 2px; text-transform: uppercase; }
+
+    p {
+      font-size: 18px;
+      line-height: 1.7;
+      color: var(--color-text-secondary);
+    }
+
+    /* ============================================
+       UTILITIES
+       ============================================ */
+    .container {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    .section-label {
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: 20px;
+    }
+
+    .section-heading {
+      margin-bottom: 24px;
+      max-width: 700px;
+    }
+
+    .section-subtext {
+      max-width: 620px;
+      margin-bottom: 48px;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .text-center .section-heading,
+    .text-center .section-subtext {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ============================================
+       BUTTONS
+       ============================================ */
+    .btn-primary {
+      display: inline-block;
+      background-color: var(--color-accent);
+      color: var(--color-white);
+      font-family: var(--font-body);
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 18px 40px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--color-accent-hover);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      display: inline-block;
+      background-color: transparent;
+      color: var(--color-white);
+      font-family: var(--font-body);
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 18px 40px;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn-secondary:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-color: var(--color-white);
+    }
+
+    /* ============================================
+       SCROLL REVEAL
+       ============================================ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* ============================================
+       HEADER
+       ============================================ */
+    .site-header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      padding: 30px 0;
+    }
+
+    .site-header .container {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .logo {
+      font-family: var(--font-heading);
+      font-size: 22px;
+      font-weight: 500;
+      color: var(--color-white);
+      letter-spacing: 1px;
+    }
+
+    .logo span {
+      font-weight: 300;
+      opacity: 0.7;
+      margin-left: 6px;
+    }
+
+    /* ============================================
+       HERO
+       ============================================ */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background-color: var(--color-bg-dark);
+      overflow: hidden;
+    }
+
+    .hero__bg {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+
+    .hero__bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.45;
+    }
+
+    .hero__gradient {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        135deg,
+        rgba(15, 25, 35, 0.92) 0%,
+        rgba(21, 35, 56, 0.78) 40%,
+        rgba(27, 58, 92, 0.55) 100%
+      );
+      z-index: 2;
+    }
+
+    .hero__content {
+      position: relative;
+      z-index: 3;
+      max-width: 680px;
+      padding: 140px 0 100px;
+    }
+
+    .hero__eyebrow {
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.6);
+      margin-bottom: 24px;
+    }
+
+    .hero__heading {
+      font-size: 56px;
+      line-height: 1.15;
+      color: var(--color-white);
+      margin-bottom: 28px;
+      font-weight: 500;
+    }
+
+    .hero__subheading {
+      font-size: 20px;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.75);
+      margin-bottom: 44px;
+      max-width: 540px;
+      font-weight: 300;
+    }
+
+    .hero__cta {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .hero__trust {
+      margin-top: 60px;
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .hero__trust-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+    }
+
+    .hero__trust-icon {
+      width: 18px;
+      height: 18px;
+      opacity: 0.5;
+    }
+
+    /* ============================================
+       TRUST STRIP
+       ============================================ */
+    .trust-strip {
+      background: linear-gradient(180deg, var(--color-bg-dark) 0%, var(--color-bg-navy) 100%);
+      padding: 50px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .trust-strip__inner {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 60px;
+      flex-wrap: wrap;
+    }
+
+    .trust-strip__item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: rgba(255, 255, 255, 0.45);
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .trust-strip__icon {
+      width: 22px;
+      height: 22px;
+      stroke: rgba(255, 255, 255, 0.35);
+      fill: none;
+    }
+
+    /* ============================================
+       INTRO / DIFFERENCE
+       ============================================ */
+    .difference {
+      background: linear-gradient(180deg, var(--color-bg-navy) 0%, var(--color-bg-primary) 30%);
+      padding: calc(var(--section-padding) + 20px) 0 var(--section-padding);
+    }
+
+    .difference__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      margin-top: 60px;
+    }
+
+    .difference__card {
+      padding: 48px 36px;
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .difference__card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.06);
+    }
+
+    .difference__icon {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 28px;
+      stroke: var(--color-accent);
+      fill: none;
+      stroke-width: 1.5;
+    }
+
+    .difference__card h3 {
+      font-size: 24px;
+      margin-bottom: 16px;
+    }
+
+    .difference__card p {
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    /* ============================================
+       IMAGE DIVIDER
+       ============================================ */
+    .image-divider {
+      position: relative;
+      height: 500px;
+      overflow: hidden;
+    }
+
+    .image-divider img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .image-divider__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        var(--color-bg-primary) 0%,
+        rgba(250, 250, 248, 0) 15%,
+        rgba(250, 250, 248, 0) 85%,
+        var(--color-bg-secondary) 100%
+      );
+    }
+
+    /* ============================================
+       SHOWCASE / PORTFOLIO
+       ============================================ */
+    .showcase {
+      background-color: var(--color-bg-secondary);
+      padding: var(--section-padding) 0;
+    }
+
+    .showcase__grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-top: 60px;
+    }
+
+    .showcase__item {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 4 / 3;
+      background-color: var(--color-bg-dark);
+    }
+
+    .showcase__item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease, opacity 0.6s ease;
+      opacity: 0.9;
+    }
+
+    .showcase__item:hover img {
+      transform: scale(1.04);
+      opacity: 1;
+    }
+
+    .showcase__overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 40px 32px;
+      background: linear-gradient(0deg, rgba(15, 25, 35, 0.85) 0%, transparent 100%);
+      z-index: 2;
+    }
+
+    .showcase__overlay h4 {
+      color: var(--color-white);
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+
+    .showcase__overlay p {
+      color: rgba(255, 255, 255, 0.65);
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    /* ============================================
+       HOW IT WORKS
+       ============================================ */
+    .how-it-works {
+      background: linear-gradient(180deg, var(--color-bg-secondary) 0%, var(--color-bg-primary) 100%);
+      padding: var(--section-padding) 0;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 36px;
+      margin-top: 60px;
+    }
+
+    .step {
+      position: relative;
+      padding: 0 8px;
+    }
+
+    .step__number {
+      font-family: var(--font-heading);
+      font-size: 64px;
+      font-weight: 400;
+      color: var(--color-accent);
+      opacity: 0.15;
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+
+    .step h4 {
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+
+    .step p {
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .step__line {
+      position: absolute;
+      top: 32px;
+      right: -18px;
+      width: 36px;
+      height: 1px;
+      background-color: var(--color-border);
+    }
+
+    .step:last-child .step__line {
+      display: none;
+    }
+
+    /* ============================================
+       MID-PAGE CTA
+       ============================================ */
+    .mid-cta {
+      background-color: var(--color-bg-primary);
+      padding: 80px 0;
+    }
+
+    .mid-cta__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      padding: 60px 70px;
+      background-color: var(--color-accent);
+    }
+
+    .mid-cta__text h3 {
+      color: var(--color-white);
+      font-size: 32px;
+      margin-bottom: 12px;
+    }
+
+    .mid-cta__text p {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 17px;
+    }
+
+    .mid-cta .btn-secondary {
+      flex-shrink: 0;
+    }
+
+    /* ============================================
+       TESTIMONIALS
+       ============================================ */
+    .testimonials {
+      background: linear-gradient(180deg, var(--color-bg-primary) 0%, var(--color-bg-dark) 15%, var(--color-bg-dark) 85%, var(--color-bg-primary) 100%);
+      padding: calc(var(--section-padding) + 40px) 0;
+    }
+
+    .testimonials .section-label {
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    .testimonials .section-heading {
+      color: var(--color-white);
+    }
+
+    .testimonials__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 60px;
+    }
+
+    .testimonial-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 44px 36px;
+      display: flex;
+      flex-direction: column;
+      transition: background 0.3s ease;
+    }
+
+    .testimonial-card:hover {
+      background: rgba(255, 255, 255, 0.07);
+    }
+
+    .testimonial-card__stars {
+      display: flex;
+      gap: 4px;
+      margin-bottom: 24px;
+    }
+
+    .testimonial-card__star {
+      width: 16px;
+      height: 16px;
+      fill: #D4A853;
+    }
+
+    .testimonial-card__quote {
+      font-family: var(--font-heading);
+      font-size: 18px;
+      font-style: italic;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.8);
+      flex: 1;
+      margin-bottom: 28px;
+    }
+
+    .testimonial-card__author {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--color-white);
+    }
+
+    .testimonial-card__role {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.4);
+      margin-top: 4px;
+    }
+
+    /* ============================================
+       FAQ
+       ============================================ */
+    .faq {
+      background-color: var(--color-bg-primary);
+      padding: var(--section-padding) 0;
+    }
+
+    .faq__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      margin-top: 60px;
+    }
+
+    .faq__intro h3 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    .faq__intro p {
+      margin-bottom: 28px;
+    }
+
+    .faq__list {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .faq__item {
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .faq__question {
+      width: 100%;
+      background: none;
+      border: none;
+      text-align: left;
+      font-family: var(--font-body);
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--color-text-heading);
+      padding: 24px 0;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      transition: color 0.2s ease;
+    }
+
+    .faq__question:hover {
+      color: var(--color-accent);
+    }
+
+    .faq__icon {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      stroke: var(--color-text-secondary);
+      fill: none;
+      transition: transform 0.3s ease;
+    }
+
+    .faq__item.active .faq__icon {
+      transform: rotate(45deg);
+    }
+
+    .faq__answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.4s ease;
+    }
+
+    .faq__item.active .faq__answer {
+      max-height: 300px;
+    }
+
+    .faq__answer p {
+      padding-bottom: 24px;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    /* ============================================
+       FINAL CTA
+       ============================================ */
+    .final-cta {
+      background: linear-gradient(180deg, var(--color-bg-primary) 0%, var(--color-bg-navy) 25%, var(--color-bg-dark) 100%);
+      padding: calc(var(--section-padding) + 40px) 0 var(--section-padding);
+      text-align: center;
+    }
+
+    .final-cta .section-label {
+      color: rgba(255, 255, 255, 0.35);
+    }
+
+    .final-cta__heading {
+      font-size: 44px;
+      color: var(--color-white);
+      margin-bottom: 24px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .final-cta__subtext {
+      font-size: 19px;
+      color: rgba(255, 255, 255, 0.6);
+      max-width: 520px;
+      margin: 0 auto 44px;
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    /* ============================================
+       FOOTER
+       ============================================ */
+    .site-footer {
+      background-color: var(--color-bg-dark);
+      padding: 50px 0;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-family: var(--font-heading);
+      font-size: 20px;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.3);
+      letter-spacing: 1px;
+    }
+
+    .footer-logo span {
+      font-weight: 300;
+      opacity: 0.6;
+      margin-left: 4px;
+    }
+
+    /* ============================================
+       RESPONSIVE
+       ============================================ */
+
+    /* Tablet */
+    @media (max-width: 960px) {
+      h1, .hero__heading { font-size: 42px; }
+      h2 { font-size: 32px; }
+      h3 { font-size: 24px; }
+
+      .container { padding: 0 32px; }
+
+      .hero__content { padding: 120px 0 80px; }
+
+      .difference__grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .showcase__grid {
+        grid-template-columns: 1fr;
+      }
+
+      .steps {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+      }
+
+      .step__line { display: none; }
+
+      .testimonials__grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .faq__grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .mid-cta__inner {
+        flex-direction: column;
+        text-align: center;
+        padding: 48px 40px;
+      }
+
+      .final-cta__heading { font-size: 36px; }
+    }
+
+    /* Mobile */
+    @media (max-width: 600px) {
+      :root {
+        --section-padding: 60px;
+      }
+
+      h1, .hero__heading { font-size: 34px; }
+      h2 { font-size: 28px; }
+      h3 { font-size: 22px; }
+
+      body { font-size: 16px; }
+      p { font-size: 16px; }
+
+      .container { padding: 0 20px; }
+
+      .hero { min-height: 90vh; }
+      .hero__content { padding: 100px 0 60px; max-width: 100%; }
+      .hero__subheading { font-size: 17px; }
+      .hero__trust { flex-direction: column; gap: 16px; align-items: flex-start; }
+
+      .btn-primary, .btn-secondary {
+        padding: 16px 32px;
+        font-size: 14px;
+        width: 100%;
+        text-align: center;
+      }
+
+      .hero__cta { flex-direction: column; }
+
+      .trust-strip__inner {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .difference__card {
+        padding: 36px 28px;
+      }
+
+      .image-divider { height: 300px; }
+
+      .steps {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+
+      .mid-cta__inner {
+        padding: 40px 28px;
+      }
+
+      .mid-cta__text h3 { font-size: 26px; }
+
+      .final-cta__heading { font-size: 30px; }
+      .final-cta__subtext { font-size: 17px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================
+       HEADER
+       ========================================== -->
+  <header class="site-header">
+    <div class="container">
+      <a href="#" class="logo">Quintessence<span>Tile</span></a>
+    </div>
+  </header>
+
+  <!-- ==========================================
+       HERO
+       ========================================== -->
+  <section class="hero">
+    <div class="hero__bg">
+      <!-- PLACEHOLDER: Replace with client's best portfolio image -->
+      <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1920&q=80" alt="Luxury marble bathroom with custom tile work">
+      <div class="hero__gradient"></div>
+    </div>
+    <div class="container">
+      <div class="hero__content">
+        <p class="hero__eyebrow reveal">Portland's Premier Tile Artisans</p>
+        <h1 class="hero__heading reveal reveal-delay-1">Bespoke Tile and Bath Design for Homes That Demand More</h1>
+        <p class="hero__subheading reveal reveal-delay-2">We bring precision, artistry, and genuine obsession for craft to every surface we touch. From natural stone to hand-set mosaics, your space deserves nothing less than extraordinary.</p>
+        <div class="hero__cta reveal reveal-delay-3">
+          <a href="#estimate" class="btn-primary">Request Your Free Estimate</a>
+        </div>
+        <div class="hero__trust reveal reveal-delay-4">
+          <div class="hero__trust-item">
+            <svg class="hero__trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+            5-Star Rated
+          </div>
+          <div class="hero__trust-item">
+            <svg class="hero__trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            Locally Owned
+          </div>
+          <div class="hero__trust-item">
+            <svg class="hero__trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+            Licensed &amp; Insured
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       TRUST STRIP
+       ========================================== -->
+  <div class="trust-strip">
+    <div class="container">
+      <div class="trust-strip__inner">
+        <div class="trust-strip__item">
+          <svg class="trust-strip__icon" viewBox="0 0 24 24" stroke-width="1.5">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+            <polyline points="22 4 12 14.01 9 11.01"/>
+          </svg>
+          Premium Materials Only
+        </div>
+        <div class="trust-strip__item">
+          <svg class="trust-strip__icon" viewBox="0 0 24 24" stroke-width="1.5">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 16 14"/>
+          </svg>
+          On-Time Completion
+        </div>
+        <div class="trust-strip__item">
+          <svg class="trust-strip__icon" viewBox="0 0 24 24" stroke-width="1.5">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+          Collaborative Process
+        </div>
+        <div class="trust-strip__item">
+          <svg class="trust-strip__icon" viewBox="0 0 24 24" stroke-width="1.5">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+          </svg>
+          Artisan-Level Craft
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       THE DIFFERENCE
+       ========================================== -->
+  <section class="difference">
+    <div class="container text-center">
+      <p class="section-label reveal">The Quintessence Difference</p>
+      <h2 class="section-heading reveal reveal-delay-1">Craftsmanship Without Compromise</h2>
+      <p class="section-subtext reveal reveal-delay-2">Every tile we set reflects our obsession with precision, our commitment to premium materials, and our belief that your home deserves artisan-level care.</p>
+
+      <div class="difference__grid">
+        <div class="difference__card reveal reveal-delay-1">
+          <svg class="difference__icon" viewBox="0 0 24 24" stroke-width="1.5">
+            <path d="M2 12L12 2l10 10"/>
+            <path d="M12 2v20"/>
+            <path d="M4.93 19.07l2.83-2.83"/>
+            <path d="M16.24 16.24l2.83 2.83"/>
+            <circle cx="12" cy="14" r="4"/>
+          </svg>
+          <h3>Artisan Precision</h3>
+          <p>Every cut, every grout line, every edge is executed with meticulous attention. We don't rush. We don't cut corners. The result is tilework that looks and feels intentional in every detail.</p>
+        </div>
+
+        <div class="difference__card reveal reveal-delay-2">
+          <svg class="difference__icon" viewBox="0 0 24 24" stroke-width="1.5">
+            <path d="M12 3v18"/>
+            <path d="M5.5 7.5L12 3l6.5 4.5"/>
+            <path d="M5.5 12L12 8l6.5 4"/>
+            <path d="M5.5 16.5L12 13l6.5 3.5"/>
+          </svg>
+          <h3>Premium Materials</h3>
+          <p>We source natural stone, porcelain, and specialty tile from the finest suppliers. Quality materials are the foundation of work that lasts decades and ages beautifully.</p>
+        </div>
+
+        <div class="difference__card reveal reveal-delay-3">
+          <svg class="difference__icon" viewBox="0 0 24 24" stroke-width="1.5">
+            <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"/>
+            <line x1="16" y1="8" x2="2" y2="22"/>
+            <line x1="17.5" y1="15" x2="9" y2="15"/>
+          </svg>
+          <h3>Collaborative Design</h3>
+          <p>Your vision drives every project. We work closely with you from concept through completion, ensuring the finished space reflects exactly what you imagined, and then some.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       IMAGE DIVIDER
+       ========================================== -->
+  <div class="image-divider">
+    <!-- PLACEHOLDER: Replace with client's wide-angle project photo -->
+    <img src="https://images.pexels.com/photos/16249146/pexels-photo-16249146.jpeg?auto=compress&cs=tinysrgb&w=1920" alt="Luxury bathroom with natural stone tile">
+    <div class="image-divider__overlay"></div>
+  </div>
+
+  <!-- ==========================================
+       SHOWCASE
+       ========================================== -->
+  <section class="showcase">
+    <div class="container">
+      <p class="section-label reveal">Our Work</p>
+      <h2 class="section-heading reveal reveal-delay-1">Spaces We Transform</h2>
+      <p class="section-subtext reveal reveal-delay-2">From expansive master baths to intimate powder rooms, we bring the same level of craft and care to every project.</p>
+
+      <div class="showcase__grid">
+        <div class="showcase__item reveal reveal-delay-1">
+          <!-- PLACEHOLDER: Replace with client's luxury bathroom remodel photo -->
+          <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=800&q=80" alt="Luxury bathroom remodel with marble surfaces">
+          <div class="showcase__overlay">
+            <h4>Luxury Bathroom Remodels</h4>
+            <p>Complete transformations featuring natural stone, custom shower surrounds, and finishes that elevate every detail.</p>
+          </div>
+        </div>
+
+        <div class="showcase__item reveal reveal-delay-2">
+          <!-- PLACEHOLDER: Replace with client's custom shower photo -->
+          <img src="https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=800&q=80" alt="Custom walk-in shower with hand-set tile">
+          <div class="showcase__overlay">
+            <h4>Custom Shower Design</h4>
+            <p>Walk-in showers with hand-set tile, frameless glass, and drainage solutions that marry form with function.</p>
+          </div>
+        </div>
+
+        <div class="showcase__item reveal reveal-delay-1">
+          <!-- PLACEHOLDER: Replace with client's floor tile photo -->
+          <img src="https://images.pexels.com/photos/5629141/pexels-photo-5629141.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Statement floor with herringbone marble tile">
+          <div class="showcase__overlay">
+            <h4>Statement Floors</h4>
+            <p>From marble herringbone to large-format porcelain, floors that anchor a room and set the tone for everything above.</p>
+          </div>
+        </div>
+
+        <div class="showcase__item reveal reveal-delay-2">
+          <!-- PLACEHOLDER: Replace with client's accent wall or backsplash photo -->
+          <img src="https://images.pexels.com/photos/15369789/pexels-photo-15369789.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Decorative accent wall with mosaic tile patterns">
+          <div class="showcase__overlay">
+            <h4>Accent Walls and Backsplashes</h4>
+            <p>Mosaic patterns, textured stone, and geometric designs that add character and visual depth to any space.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       HOW IT WORKS
+       ========================================== -->
+  <section class="how-it-works">
+    <div class="container text-center">
+      <p class="section-label reveal">The Process</p>
+      <h2 class="section-heading reveal reveal-delay-1">From Vision to Reality<br>in Four Steps</h2>
+
+      <div class="steps">
+        <div class="step reveal reveal-delay-1">
+          <div class="step__number">01</div>
+          <h4>Consultation</h4>
+          <p>Share your project goals, style preferences, and budget. We'll visit your space and discuss what's possible.</p>
+          <div class="step__line"></div>
+        </div>
+
+        <div class="step reveal reveal-delay-2">
+          <div class="step__number">02</div>
+          <h4>Design and Selection</h4>
+          <p>We recommend materials, layouts, and design approaches tailored to your space and vision.</p>
+          <div class="step__line"></div>
+        </div>
+
+        <div class="step reveal reveal-delay-3">
+          <div class="step__number">03</div>
+          <h4>Expert Installation</h4>
+          <p>Our team executes with precision, keeping you informed throughout and respecting your home as if it were our own.</p>
+          <div class="step__line"></div>
+        </div>
+
+        <div class="step reveal reveal-delay-4">
+          <div class="step__number">04</div>
+          <h4>The Reveal</h4>
+          <p>Walk into a finished space that exceeds what you imagined. We don't leave until every detail is right.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       MID-PAGE CTA
+       ========================================== -->
+  <section class="mid-cta">
+    <div class="container">
+      <div class="mid-cta__inner reveal">
+        <div class="mid-cta__text">
+          <h3>Ready to Elevate Your Space?</h3>
+          <p>Tell us about your project. No pressure, no obligation.</p>
+        </div>
+        <a href="#estimate" class="btn-secondary">Request Your Free Estimate</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       TESTIMONIALS
+       ========================================== -->
+  <section class="testimonials">
+    <div class="container text-center">
+      <p class="section-label reveal">Client Experiences</p>
+      <h2 class="section-heading reveal reveal-delay-1">What Our Clients Say</h2>
+
+      <div class="testimonials__grid">
+        <div class="testimonial-card reveal reveal-delay-1">
+          <div class="testimonial-card__stars">
+            <svg class="testimonial-card__star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="testimonial-card__star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="testimonial-card__star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="testimonial-card__star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="testimonial-card__star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="testimonial-card__quote">*We interviewed four contractors before choosing Quintessence. From the first consultation, it was clear they understood our vision. The finished master bath is beyond anything we expected.*</p>
+          <p class="testimonial-card__author">*Sarah M.*</p>
+          <p class="testimonial-card__role">*Lake Oswego*</p>
+        </div>
+
+        <div class="testimonial-card reveal reveal-delay-2">
+          <div class="testimonial-card__stars">
+            <svg class="testimonial-card__star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="testimonial-card__star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="testimonial-card__star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="testimonial-card__star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="testimonial-card__star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="testimonial-card__quote">*The attention to detail is remarkable. Every grout line is perfect, every edge is clean. They treated our home with incredible respect throughout the entire project.*</p>
+          <p class="testimonial-card__author">*David K.*</p>
+          <p class="testimonial-card__role">*Pearl District*</p>
+        </div>
+
+        <div class="testimonial-card reveal reveal-delay-3">
+          <div class="testimonial-card__stars">
+            <svg class="testimonial-card__star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="testimonial-card__star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="testimonial-card__star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="testimonial-card__star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="testimonial-card__star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="testimonial-card__quote">*Quintessence turned our outdated bathroom into something you'd see in a design magazine. Professional, communicative, and genuinely passionate about their work.*</p>
+          <p class="testimonial-card__author">*Rachel T.*</p>
+          <p class="testimonial-card__role">*West Hills*</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       FAQ
+       ========================================== -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="faq__grid">
+        <div class="faq__intro reveal">
+          <p class="section-label">Common Questions</p>
+          <h3>Everything You Need to Know Before We Begin</h3>
+          <p>We believe in transparency from the very first conversation. Here are the questions we hear most often.</p>
+          <a href="#estimate" class="btn-primary">Request Your Free Estimate</a>
+        </div>
+
+        <div class="faq__list">
+          <div class="faq__item reveal reveal-delay-1">
+            <button class="faq__question" aria-expanded="false">
+              What areas do you serve?
+              <svg class="faq__icon" viewBox="0 0 24 24" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+            <div class="faq__answer">
+              <p>We serve the greater Portland metro area, including Lake Oswego, West Linn, Tigard, Beaverton, and surrounding communities. Contact us if you're unsure whether your location falls within our service area.</p>
+            </div>
+          </div>
+
+          <div class="faq__item reveal reveal-delay-2">
+            <button class="faq__question" aria-expanded="false">
+              How long does a typical bathroom remodel take?
+              <svg class="faq__icon" viewBox="0 0 24 24" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+            <div class="faq__answer">
+              <p>Timeline depends on scope, but most bathroom remodels run 2 to 4 weeks from demolition to completion. We provide a detailed timeline during your consultation so there are no surprises.</p>
+            </div>
+          </div>
+
+          <div class="faq__item reveal reveal-delay-3">
+            <button class="faq__question" aria-expanded="false">
+              Do you help with material selection?
+              <svg class="faq__icon" viewBox="0 0 24 24" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+            <div class="faq__answer">
+              <p>Absolutely. We guide you through material options based on your aesthetic goals, lifestyle needs, and budget. We have relationships with premium suppliers and can source specialty materials that most contractors can't access.</p>
+            </div>
+          </div>
+
+          <div class="faq__item reveal reveal-delay-3">
+            <button class="faq__question" aria-expanded="false">
+              What does the estimate process look like?
+              <svg class="faq__icon" viewBox="0 0 24 24" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+            <div class="faq__answer">
+              <p>We schedule a visit to your space, discuss your vision and goals, take measurements, and provide a detailed written estimate within a few business days. No pressure, no obligation.</p>
+            </div>
+          </div>
+
+          <div class="faq__item reveal reveal-delay-4">
+            <button class="faq__question" aria-expanded="false">
+              Are you licensed and insured?
+              <svg class="faq__icon" viewBox="0 0 24 24" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+            <div class="faq__answer">
+              <p>Yes. We are fully licensed, bonded, and insured in the state of Oregon. We're happy to provide documentation upon request.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       FINAL CTA
+       ========================================== -->
+  <section class="final-cta" id="estimate">
+    <div class="container">
+      <p class="section-label reveal">Start Your Project</p>
+      <h2 class="final-cta__heading reveal reveal-delay-1">Your Space Deserves the Best</h2>
+      <p class="final-cta__subtext reveal reveal-delay-2">Tell us about your project and we'll provide a detailed, no-obligation estimate. Portland's finest homes start with a conversation.</p>
+
+      <!-- PLACEHOLDER FORM: Replace with HubSpot, Zoho, or preferred form embed -->
+      <div class="reveal reveal-delay-3" style="max-width: 520px; margin: 0 auto;">
+        <form style="display: flex; flex-direction: column; gap: 16px;">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+            <input type="text" placeholder="First Name" style="
+              padding: 16px 20px;
+              font-family: var(--font-body);
+              font-size: 15px;
+              background: rgba(255, 255, 255, 0.08);
+              border: 1px solid rgba(255, 255, 255, 0.15);
+              color: var(--color-white);
+              outline: none;
+              transition: border-color 0.3s ease;
+            " onfocus="this.style.borderColor='rgba(255,255,255,0.4)'" onblur="this.style.borderColor='rgba(255,255,255,0.15)'">
+            <input type="text" placeholder="Last Name" style="
+              padding: 16px 20px;
+              font-family: var(--font-body);
+              font-size: 15px;
+              background: rgba(255, 255, 255, 0.08);
+              border: 1px solid rgba(255, 255, 255, 0.15);
+              color: var(--color-white);
+              outline: none;
+              transition: border-color 0.3s ease;
+            " onfocus="this.style.borderColor='rgba(255,255,255,0.4)'" onblur="this.style.borderColor='rgba(255,255,255,0.15)'">
+          </div>
+          <input type="email" placeholder="Email Address" style="
+            padding: 16px 20px;
+            font-family: var(--font-body);
+            font-size: 15px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: var(--color-white);
+            outline: none;
+            transition: border-color 0.3s ease;
+          " onfocus="this.style.borderColor='rgba(255,255,255,0.4)'" onblur="this.style.borderColor='rgba(255,255,255,0.15)'">
+          <input type="tel" placeholder="Phone Number" style="
+            padding: 16px 20px;
+            font-family: var(--font-body);
+            font-size: 15px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: var(--color-white);
+            outline: none;
+            transition: border-color 0.3s ease;
+          " onfocus="this.style.borderColor='rgba(255,255,255,0.4)'" onblur="this.style.borderColor='rgba(255,255,255,0.15)'">
+          <textarea placeholder="Tell us about your project" rows="4" style="
+            padding: 16px 20px;
+            font-family: var(--font-body);
+            font-size: 15px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: var(--color-white);
+            outline: none;
+            resize: vertical;
+            transition: border-color 0.3s ease;
+          " onfocus="this.style.borderColor='rgba(255,255,255,0.4)'" onblur="this.style.borderColor='rgba(255,255,255,0.15)'"></textarea>
+          <button type="submit" class="btn-primary" style="margin-top: 8px; width: 100%; text-align: center;">Request Your Free Estimate</button>
+        </form>
+        <p style="text-align: center; color: rgba(255,255,255,0.3); font-size: 13px; margin-top: 16px;">We typically respond within one business day.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       FOOTER
+       ========================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <p class="footer-logo">Quintessence<span>Tile</span></p>
+    </div>
+  </footer>
+
+  <!-- ==========================================
+       JAVASCRIPT
+       ========================================== -->
+  <script>
+    // Scroll reveal animation
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // FAQ accordion
+    document.querySelectorAll('.faq__question').forEach(button => {
+      button.addEventListener('click', () => {
+        const item = button.parentElement;
+        const isActive = item.classList.contains('active');
+        const expanded = button.getAttribute('aria-expanded') === 'true';
+
+        // Close all other items
+        document.querySelectorAll('.faq__item').forEach(i => {
+          i.classList.remove('active');
+          i.querySelector('.faq__question').setAttribute('aria-expanded', 'false');
+        });
+
+        // Toggle current item
+        if (!isActive) {
+          item.classList.add('active');
+          button.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
